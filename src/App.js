@@ -1,30 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
+import data from "./data/db.json"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+function API() {
+  return (<>{JSON.stringify(data)}</>);
+}
+function Home(){
+  return(<a
+    className="App-link"
+    href="https://reactjs.org"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Gouligator Update 2!!!!!!!
+  </a>);
+}
 
 function Data(){
   const [Data,setData] = useState(null)
   //https://randomuser.me/api
   useEffect(()=>{
-    let headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-
-    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
-    headers.append('Access-Control-Allow-Credentials', 'true');
-
-    headers.append('GET', 'POST', 'OPTIONS');
-    fetch('https://github.com/pagoulid/yummygreek/blob/master/src/data/db.json',{
-      method:'get',
-      headers: new Headers({
-        'Content-Type':'application/json',
-        'Accept':'application/json',
-        'Access-Control-Allow-Origin':'http://localhost:3000',
-        'Access-Control-Allow-Credentials':'true'
-
-      })
-    }).then(
+    
+    fetch('https://pagoulid.github.io/yummygreek/dishes')
+    .then(
       response=>{
         console.log('test')
         console.log(response.status)
@@ -44,25 +44,25 @@ function Data(){
 
   return <ul>{Data}</ul>
 }
+
 function App() {
   return (
+    <Router>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Data/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Gouligator Update 2!!!!!!!
-        </a>
+        
+        <Routes>
+                <Route exact path='yummygreek/' element={< Data />}></Route>
+                <Route exact path='yummygreek/dishes/' element={< API/>}></Route>
+        </Routes>
+        
       </header>
     </div>
+    </Router>
   );
 }
 
