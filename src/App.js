@@ -7,17 +7,18 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function API() {
   return (<>{JSON.stringify(data)}</>);
 }
-function Home(){
-  return(<a
-    className="App-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Gouligator Update 2!!!!!!!
-  </a>);
-}
 
+function Home(){
+  return(<div className="App">
+  <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <p>
+      Edit <code>src/App.js</code> and save to reload.
+    </p>
+    </header>
+    </div>
+    );
+}
 function Data(){
   const [Data,setData] = useState(null)
   //https://randomuser.me/api
@@ -42,27 +43,25 @@ function Data(){
     })
   },[]) // runs only on the first render
 
-  return <ul>{Data}</ul>
-}
+  return(
+    <>
+    <Home/>
+    <ul>{Data}</ul>
+    </>);
+  }
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <>
+    
         
         <Routes>
-                <Route exact path='#/' element={< Data />}></Route>
-                <Route exact path='#/dishes/' element={< API/>}></Route>
+                <Route exact path='/' element={< Data />}></Route>
+                <Route exact path='dishes/' element={< API/>}></Route>
         </Routes>
         
-      </header>
-    </div>
-    </Router>
+      
+    </>
   );
 }
 

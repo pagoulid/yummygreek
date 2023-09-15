@@ -1,7 +1,7 @@
 {
   "name": "yummygreek",
   "version": "0.1.0",
-  "homepage": "https://pagoulid.github.io/yummygreek",
+  "homepage": "https://pagoulid.github.io/yummygreek/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
