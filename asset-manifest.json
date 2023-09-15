@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/yummygreek/static/css/main.23a3453e.css",
-    "main.js": "/yummygreek/static/js/main.294fb4bd.js",
+    "main.js": "/yummygreek/static/js/main.e3b9cb62.js",
     "static/js/787.d3896c01.chunk.js": "/yummygreek/static/js/787.d3896c01.chunk.js",
     "static/media/logo.svg": "/yummygreek/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/yummygreek/index.html",
     "main.23a3453e.css.map": "/yummygreek/static/css/main.23a3453e.css.map",
-    "main.294fb4bd.js.map": "/yummygreek/static/js/main.294fb4bd.js.map",
+    "main.e3b9cb62.js.map": "/yummygreek/static/js/main.e3b9cb62.js.map",
     "787.d3896c01.chunk.js.map": "/yummygreek/static/js/787.d3896c01.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.23a3453e.css",
-    "static/js/main.294fb4bd.js"
+    "static/js/main.e3b9cb62.js"
   ]
 }
