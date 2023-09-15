@@ -56,8 +56,8 @@ function App() {
         </p>
         
         <Routes>
-                <Route exact path='yummygreek/' element={< Data />}></Route>
-                <Route exact path='yummygreek/dishes/' element={< API/>}></Route>
+                <Route exact path='#/' element={< Data />}></Route>
+                <Route exact path='#/dishes/' element={< API/>}></Route>
         </Routes>
         
       </header>
