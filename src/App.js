@@ -57,7 +57,7 @@ function App() {
         
         <Routes>
                 <Route exact path='/' element={< Data />}></Route>
-                <Route exact path='dishes/' element={< API/>}></Route>
+                <Route exact path='dishes' element={< API/>}></Route>
         </Routes>
         
       
