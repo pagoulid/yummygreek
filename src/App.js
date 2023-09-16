@@ -5,7 +5,7 @@ import data from "./data/db.json"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function API() {
-  return (<>{JSON.stringify(data)}</>);
+  return <p>PPPP</p>;
 }
 
 function Home(){
@@ -19,49 +19,30 @@ function Home(){
     </div>
     );
 }
-function Data(){
-  const [Data,setData] = useState(null)
-  //https://randomuser.me/api
-  useEffect(()=>{
-    
-    fetch('https://pagoulid.github.io/yummygreek/dishes')
-    .then(
-      response=>{
-        console.log('test')
-        console.log(response.status)
-        if(response.status===200){
-          return response.json()
-        }
-      }
-    ).then(jsonData=>{
-      const dishes = jsonData.dishes
-      console.log(dishes)
-      const Items = dishes.map(item=><li key={item.id}>{item.name}</li>)
-      return Items
-    }).then(Items=>{
-      setData(Items)
-    })
-  },[]) // runs only on the first render
+function DataHandle(){
 
+  const dishes=data.dishes
+  const [Data,setData] = useState(dishes)
+  
   return(
     <>
     <Home/>
-    <ul>{Data}</ul>
+    <ul>{Data.map(item=><li key={item.id}><img src={item.image}></img><h2>{item.name}</h2></li>)}</ul>
     </>);
   }
 
 function App() {
   return (
-    <>
+    
     
         
         <Routes>
-                <Route exact path='/' element={< Data />}></Route>
-                <Route exact path='dishes' element={< API/>}></Route>
+                <Route exact path='/yummygreek' element={< DataHandle />}></Route>
+                <Route exact path='/yummygreek/dishes' element={< API/>}></Route>
         </Routes>
         
       
-    </>
+    
   );
 }
 
